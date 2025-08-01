@@ -30,4 +30,25 @@
         },
     });
 
+
+    /*=========================
+          Counter 
+    ========================== */
+    $('.counter-item').each(function () {
+        var $counterItem = $(this);
+        $counterItem.isInViewport(function (status) {
+            if (status === 'entered') {
+                $counterItem.find('.odometer').each(function () {
+                    var el = this;
+                    el.innerHTML = el.getAttribute('data-odometer-final');
+                });
+            }
+        });
+    });
+   window.odometerOptions = {
+  format: '(ddd)' 
+};
+
+
+
 })(jQuery);

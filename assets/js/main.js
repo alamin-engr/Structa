@@ -32,7 +32,7 @@
 
 
     /*=========================
-          Counter 
+        Counter 
     ========================== */
     $('.counter-item').each(function () {
         var $counterItem = $(this);
@@ -45,9 +45,35 @@
             }
         });
     });
-   window.odometerOptions = {
-  format: '(ddd)' 
+    window.odometerOptions = {
+    format: '(ddd)' 
 };
+    /*=========================
+          progress-bar
+    ========================== */
+// About Section Progress Bar
+window.addEventListener('DOMContentLoaded', () => {
+  const bars = document.querySelectorAll('.about-bar__progress .bar-inner');
+
+  bars.forEach(bar => {
+    // Remove counted class and reset width to 0 before animation
+    bar.classList.remove('counted');
+    bar.style.width = '0';
+
+    const percent = bar.getAttribute('data-percent') || '0%';
+
+    // Delay the animation slightly so CSS transition triggers
+    setTimeout(() => {
+      bar.style.width = percent;
+    }, 100);
+
+    bar.addEventListener('transitionend', () => {
+      bar.classList.add('counted');
+    });
+  });
+});
+
+
 
 
 

@@ -73,7 +73,31 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+    /* Hero Slide */
 
+    var heroSlider = new Swiper('.hero-slider', {
+        loop: true,
+        slidesPerView: 1,
+        speed: 1000,
+        fadeEffect: { crossFade: true },
+        effect: 'fade',
+        navigation: {
+            nextEl: '.hero-button-next',
+            prevEl: '.hero-button-prev',
+        },
+        breakpoints: {
+            320: {
+                autoplay: {
+                    delay: 1000,
+                },
+            },
+            992: {
+                autoplay: false,
+            },
+        },
+    });
+
+    /* Hero End */
 
 
 
